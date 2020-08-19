@@ -11,7 +11,7 @@
                 height: 100vh;
             }
 
-            button {
+            #send-btn button {
                 background: #5f55af;
                 border: 0;
                 border-radius: 5px;
@@ -21,7 +21,7 @@
                 font-weight: bold;
             }
 
-            button img {
+            #send-btn button img {
                 display: inline-block;
                 vertical-align: middle;
                 padding-right: 5px;
@@ -29,7 +29,7 @@
 
             }
 
-            button:hover img {
+            #send-btn button:hover img {
                 animation: fly 2s ease 1;
             }
 
@@ -77,6 +77,9 @@
                 color: #b9e769;
             }
 
+            .four{
+                color: #b9e769;
+            }
             .btn:hover {
                 color: white;
                 border: 0;
@@ -102,7 +105,103 @@
                 -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
                 box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
             }
+            .four:hover{
+                /* background-color: #b9e769; */
+                box-shadow: inset 1px 1px 10px 10px rgba(185, 231, 105, 1);
+            }
 
+            /* 边框效果 */
+            #draw-border {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                flex-direction: column;
+            }
+
+            #draw-border button {
+                border: 0;
+                background: none;
+                text-transform: uppercase;
+                color: #4361ee;
+                font-weight: bold;
+                position: relative;
+                outline: none;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                margin-bottom: 50px;
+            }
+
+            #draw-border button::before, button::after {
+                box-sizing: inherit;
+                position: absolute;
+                content: '';
+                border: 2px solid transparent;
+                width: 0;
+                height: 0;
+            }
+
+            #draw-border button::after {
+                bottom: 0;
+                right: 0;
+            }
+
+            #draw-border button::before {
+                top: 0;
+                left: 0;
+            }
+
+            #draw-border button:hover::before, button:hover::after {
+                width: 100%;
+                height: 100%;
+            }
+
+            #draw-border button:hover::before {
+                border-top-color: #4361ee;
+                border-right-color: #4361ee;
+                transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+            }
+
+            #draw-border button:hover::after {
+                border-bottom-color: #4361ee;
+                border-left-color: #4361ee;
+                transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out 1s;
+            }
+            #draw-border .draw-img{
+                display: block;
+                position: relative;
+                box-sizing: border-box;
+            }
+            .draw-img::before, .draw-img::after{
+                box-sizing: inherit;
+                position: absolute;
+                content: '';
+                border: 3px solid transparent;
+                width: 0;
+                height: 0;
+            }
+            .draw-img::after{
+                bottom: 0;
+                right: 0;
+            }
+            .draw-img::before{
+                top: 0;
+                left: 0;
+            }
+            .draw-img:hover::before, .draw-img:hover::after{
+                width: 100%;
+                height: 100%;
+            }
+            .draw-img:hover::before{
+                border-top-color: #b9e769;
+                border-right-color:#b9e769;
+                transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+            }
+            .draw-img:hover::after{
+                border-bottom-color:#b9e769;
+                border-left-color: #b9e769;
+                transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out 1s;
+            }
         </style>
     </head>
     <!-- 发送效果 -->
@@ -120,5 +219,12 @@
         <button class="btn one">Hover me</button>
         <button class="btn two">Hover me</button>
         <button class="btn three">Hover me</button>
+        <button class="btn four">Hover me</button>
+    </div>
+    <!-- 边框效果 -->
+    <div id="draw-border">
+        <button>Hover me</button>
+        
+        <a href="" class="draw-img"><img src="https://vhome.vipkid-inc.com/static/images/header/logo.jpg" alt=""></a>
     </div>
 </html>
