@@ -42,3 +42,6 @@ box-shadow: inherit;
 box-shadow: initial;
 box-shadow: unset;
 ```
+
+## box-sizing
+- CSS 中的 box-sizing 属性定义了 user agent 应该如何计算一个元素的总宽度和总高度。

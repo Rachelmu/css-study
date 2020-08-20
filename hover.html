@@ -2,7 +2,9 @@
     <head>
         <title>css-hover特效</title>
         <style>
-
+            .wrap{
+                height: 100vh;
+            }
             /* 发送效果 */
             #send-btn{
                 display: flex;
@@ -202,6 +204,214 @@
                 border-left-color: #b9e769;
                 transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out 1s;
             }
+
+            /*圆形效果*/
+            #circle-btn { 
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+            }
+
+            #circle-btn .btn-container {
+              position: relative;  
+            }
+
+            #circle-btn button {
+              border: 0;
+              border-radius: 50px;
+              color: white;
+              background: #5f55af;
+              padding: 15px 20px 16px 60px;
+              text-transform: uppercase;
+              background: linear-gradient(to right, #f72585 50%, #5f55af 50%);
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition:all 2s ease;
+            }
+           /* #circle-btn svg {
+              background: #f72585;
+              padding: 8px;
+              border-radius: 50%;
+              position: absolute;
+              left: 0;
+              top: 0%;
+            }*/
+
+            #circle-btn button:hover {
+               background-position: left bottom;
+            }
+
+            /*圆角效果*/
+            #border-btn { 
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+            }
+
+            #border-btn button {
+              border: 0;
+              border-radius: 10px;
+              background: #2ec4b6;
+              text-transform: uppercase;
+              color: white;
+              font-size: 16px;
+              font-weight: bold;
+              padding: 15px 30px;
+              outline: none;
+              position: relative;
+              transition: border-radius 3s;
+              -webkit-transition: border-radius 3s;
+            }
+
+            #border-btn button:hover {
+               border-bottom-right-radius: 50px;
+               border-top-left-radius: 50px;
+               border-bottom-left-radius: 10px;
+               border-top-right-radius: 10px;
+            }
+
+            /*冰冻效果*/
+            #frozen-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+            }
+
+            #frozen-btn button {
+              border: 0;
+              margin: 20px;
+              text-transform: uppercase;
+              font-size: 20px;
+              font-weight: bold;
+              padding: 15px 50px;
+              border-radius: 50px;
+              color: white;
+              outline: none;
+              position: relative;
+            }
+
+            #frozen-btn button:before{
+              content: '';
+              display: block;
+              background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
+              background-size: 210% 100%;
+              background-position: right bottom;
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              bottom:0;
+              right:0;
+              left: 0;
+              border-radius: 50px;
+              transition: all 1s;
+              -webkit-transition: all 1s;
+            }
+
+            #frozen-btn .green {
+               background-image: linear-gradient(to right, #25aae1, #40e495);
+               box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+            }
+
+            #frozen-btn .purple {
+               background-image: linear-gradient(to right, #6253e1, #852D91);
+               box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+            }
+              
+            #frozen-btn .purple:hover:before {
+              background-position: left bottom;
+            }
+
+            #frozen-btn .green:hover:before {
+              background-position: left bottom;
+            }
+
+
+            /*闪亮效果*/
+            #shiny-shadow {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              background: #1c2541;
+            }
+
+            #shiny-shadow button {
+              border: 2px solid white;
+              background: transparent;
+              text-transform: uppercase;
+              color: white;
+              padding: 15px 50px;
+              outline: none;
+              overflow: hidden;
+              position: relative;
+            }
+
+            #shiny-shadow span {
+              z-index: 20;  
+            }
+
+            #shiny-shadow button:after {
+              content: '';
+                display: block;
+                position: absolute;
+                top: -36px;
+                left: -100px;
+                background: white;
+                width: 50px;
+                height: 125px;
+                opacity: 20%;
+                transform: rotate(-45deg);
+            }
+
+            #shiny-shadow button:hover:after {
+              left: 120%;
+              transition: all 600ms cubic-bezier(0.3, 1, 0.2, 1);
+               -webkit-transition: all 600ms cubic-bezier(0.3, 1, 0.2, 1);
+            }
+
+            /*加载效果*/
+            #loading-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+            }
+
+            #loading-btn button {
+              background: transparent;
+              border: 0;
+              border-radius: 0;
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 20px;
+              padding: 15px 50px;
+              position: relative;
+            }
+
+            #loading-btn button:before {
+              transition: all 0.8s cubic-bezier(0.7, -0.5, 0.2, 2);
+              content: '';
+              width: 1%;
+              height: 100%;
+              background: #ff5964;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            #loading-btn button span {
+              mix-blend-mode: darken;
+            }
+
+            #loading-btn button:hover:before {
+              background: #ff5964;
+              width: 100%;
+            }
+
         </style>
     </head>
     <!-- 发送效果 -->
@@ -227,4 +437,37 @@
         
         <a href="" class="draw-img"><img src="https://vhome.vipkid-inc.com/static/images/header/logo.jpg" alt=""></a>
     </div>
+    <!-- 圆形效果 -->
+    <div class="wrap">
+        <div id="circle-btn">
+          <div class="btn-container">
+            <!-- <svg xmlns="send.svg" version="1.1"></svg> -->
+            <span></span>
+            <button>Hover me</button>
+        </div>
+    </div>
+    <!-- 圆角效果 -->
+    <div class="wrap">
+        <div id="border-btn">
+            <button>Hover me</button>
+        </div>
+    </div>
+
+    <!-- 冰冻效果 -->
+    <div id="frozen-btn">
+      <button class="green">Hover me</button>
+      <button class="purple">Hover me</button>
+    </div>
+
+    <!-- 闪亮效果 -->
+    <div id="shiny-shadow">
+      <button><span>Hover me</span></button>
+    </div>
+
+    <!-- 加载效果 -->
+    <div id="loading-btn">
+      <button><span>Hover me</span></button>
+    </div>
+</div>
+
 </html>
