@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>text 相关</title>
+        <style>
+            .link{
+                text-decoration-style: solid;
+                /* 双线 */
+                text-decoration-style: double;  
+                /* 点线 */
+                text-decoration-style: dotted;
+                /* 虚线 */
+                text-decoration-style: dashed;
+                /* 波浪线 */
+                text-decoration-style: wavy;
+
+                text-decoration-style: inherit;
+
+                /* 修改颜色 */
+                text-decoration-color: aqua;
+
+                /* 字符和装饰线发生重叠关系的时候 ，删除线，或者一些英文字符(g, q)和下划线，我们的装饰线是跳过文字字符，还是直接连在一起穿过去
+                    属性值
+                    objects: 默认值。 装饰线跳过内联对象，比方说图片啊或者inline-block元素。
+                    none: 装饰线穿过一切，包括本应跳过的内联对象。
+                    spaces: 装饰线跳过空格或字符间分隔，以及letter-spacing或word-spacing形成的间距。
+                    ink: 装饰线跳过符号或下沉字母。
+                    edges: 装饰性起始于内容起始边缘后面，结束语内容结束边缘的前面。这个属性值的目的是为了让两个搞在一起的下划线元素看上去公用一条下划线。这对于中文字体很有用，因为会使用下划线作为标点符号。
+                    box-decoration: 装饰线跳过继承的margin, border, 以及padding.
+                    trailing-spaces: 装饰线跳过pre或white-space: pre-wrap里面前后空格。
+                */
+                text-decoration-skip: ink;
+
+                /* 在最新的OSX和iOS下，Safari浏览器默认对装饰线的穿越规则进行了修改 */
+                -webkit-text-decoration-skip: none;
+
+                /* text-decoration的缩写
+                    text-decoration实际上是种缩写，完整的，应该包括：text-decoration-line, text-decoration-style, text-decoration-color
+                */
+                text-decoration: underline wavy red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="" class="link"></a>
+        </div>
+    </body>
+</html>
