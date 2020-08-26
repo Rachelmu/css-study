@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>
+            wavy 波浪线的实现
+        </title>
+        <style>
+            /* 
+                原理：伪元素生成两个空格，使用letter-spacing属性控制两个空格占据的宽度足够宽，
+                这样空格字符的装饰线的尺寸一定可以充满整个容器，
+                此时只要设置装饰线的类型是波浪线，
+                宽度100%自适应的波浪线效果就实现了。 
+                font-size: 控制大小
+            */
+            wavy{
+                display: block;
+                height: .5rem;
+                white-space: nowrap;
+                letter-spacing: 100vw;
+                padding-top: .5em;
+                overflow: hidden;
+                font-size: 20px;    
+                color: aqua;
+            }
+            wavy::before{
+                content: "\2000\2000";
+                /* IE浏览器实线代替 */
+                text-decoration: overline;
+                /* 现代浏览器 */
+                text-decoration: overline wavy;
+            }
+
+            /* 使用径向渐变纯CSS实现 */
+            .flow-wave:hover {
+                background: radial-gradient(circle at 10px -7px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x,
+                    radial-gradient(circle at 10px 27px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x;
+                background-size: 20px 20px;
+                background-position: -10px calc(100% + 16px), 0 calc(100% - 4px);
+                text-decoration: none;
+            }
+            .flow-wave {
+                animation: waveFlow 1s infinite linear;
+            }
+            @keyframes waveFlow {
+                from { background-position-x: -10px, 0; }
+                to { background-position-x: -30px, -20px; }
+            }
+
+            /* 使用SVG波形矢量图作为背景 */
+            /* 
+                波浪线颜色'%23' = #
+                #333
+                stroke='%23333' 
+            */
+            .svg-wave:hover {
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23333' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%; 
+                background-size: 20px auto;
+                text-decoration: none;
+            }
+            .svg-wave {
+                color:aqua;
+                animation: waveMove 1s infinite linear;
+            }
+            @keyframes waveMove {
+                from { background-position: 0 100%; }
+                to   { background-position: -20px 100%; }
+            }
+        </style>
+    </head>
+    <body>
+        <wavy></wavy>
+        <a href="" class="flow-wave">使用径向渐变纯CSS实现</a>
+        <a href="" class="svg-wave">使用SVG波形矢量图作为背景</a>
+    </body>
+</html>
