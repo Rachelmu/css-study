@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>多重边框</title>
 	<style type="text/css">
-		div{
+		.shadow{
 			width: 100px;
 			height: 60px;
 			margin: 20px;
@@ -14,10 +14,18 @@
 						0 0 0 15px deeppink,
             			0 2px 5px 15px rgba(0,0,0,.6);;
 		}
+		.outline{
+			width: 100px;
+			height: 60px;
+			/*margin: 20px;*/
+			background: yellowgreen;
+			border: 10px solid #655;
+			outline: 5px solid deeppink;
+		}
 	</style>
 </head>
 <body>
-	<div></div>
+	<div class="shadow"></div>
+	<div class="outline"></div>
 </body>
-
 </html>
