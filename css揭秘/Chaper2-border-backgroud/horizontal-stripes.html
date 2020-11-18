@@ -22,8 +22,25 @@
 		.diagonal{
 			width: 200px;
 			height: 200px;
-			background: linear-gradient(45deg, #fb3 50%, #58a 0);
-			background-size: 30px 30px;
+			background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+			background-size: 42px 42px;
+		}
+		.diagonal-60deg{
+			width: 200px;
+			height: 200px;
+			background: repeating-linear-gradient(60deg, #fb3, #58a 30px);
+		}
+		.diagonal-45deg{
+			width: 200px;
+			height: 200px;
+			/*background: repeating-linear-gradient(45deg, #fb3, #fb3 15px,#58a 0px, #58a 30px);*/
+			background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+		}
+		.sublet-stripes{
+			width: 200px;
+			height: 200px;
+			background: #58a;
+			background-image: repeating-linear-gradient(30deg, hsla(0, 0%,100%, .1), hsla(0, 0%, 100%, .1) 15px, transparent 0, transparent 30px);
 		}
 	</style>
 </head>
@@ -31,5 +48,7 @@
 	<div></div>
 	<div class="vertical"></div>
 	<div class="diagonal"></div>
+	<div class="diagonal-60deg"></div>
+	<div class="sublet-stripes"></div>
 </body>
 </html>
