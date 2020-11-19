@@ -10,14 +10,70 @@
 			height: 200px;
 		}
 		.gridding{
-			background: white;
-			background-image: linear-gradient(90deg, rgba(200,0,0, .5) 50%, transparent 0),
-							  linear-gradient(rgba(200,0,0 .5) 50%, transparent 0);
+			background: #58a;
+			background-image: linear-gradient(white 2px, transparent 0),
+			                  linear-gradient(90deg, white 2px, transparent 0),
+			                  linear-gradient(hsla(0,0%,100%,.3) 1px, transparent 0),
+			                  linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
+			background-size: 50px 50px, 50px 50px,
+			                 10px 10px, 10px 10px;
+		}
+		.svg{
+			background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMyNjkiPjwvcmVjdD4KPGcgZmlsbD0iIzY0OTRiNyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMSIgeT0iMjAiPjwvcmVjdD4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxIiB5PSI0MCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEiIHk9IjYwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMSIgeT0iODAiPjwvcmVjdD4KPHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMTAwIiB4PSIyMCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxMDAiIHg9IjQwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEwMCIgeD0iNjAiPjwvcmVjdD4KPHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMTAwIiB4PSI4MCI+PC9yZWN0Pgo8L2c+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZT0iI2ZmZiI+PC9yZWN0Pgo8L3N2Zz4=");
+		}
+		.polka{
+			background: #655;
+			background-image: radial-gradient(tan 20%, transparent 0),
+			                  radial-gradient(tan 20%, transparent 0);
+			background-size: 30px 30px;
+			background-position: 0 0, 15px 15px;
+		}
+		/*scss*/
+		/*@mixin polka($size, $dot, $base, $accent){
+			bakcground: $base;
+			background-image:
+				radial-gradient($accent $dot, transparent 0),
+				radial-gradient($accent $dot, transparent 0);
+			background-size: $size $size;
+			background-position: 0 0, $size/2 $size/2;
+		}
+		@include polka(30px, 30%, #655, tan)*/
+		.checkerboard{
+			background: #eee;
+			/*background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0);
+			background-size: 30px 30px;
+			background-position: 0 0, 15px 15px; *//*把第二层渐变在水平和垂直方向均移动贴片长度的一半*/
+			background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0),
+							  linear-gradient(45deg, #bbb 25%, transparent 0),
+							  linear-gradient(45deg, transparent 75%, #bbb 0);
+			background-size: 30px 30px;
+			background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+		}
+		/*@mixin checkerboard($size,$base, $accent:rgba(0,0,0, .25)){
+			background: $base;
+			background-image: linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0),
+							  linear-gradient(45deg, $accent 25%, transparent 75%, $accent 0);
+			background-position: 0 0, $size $size,
+			background-size:2*%size 2*$size;
+		}
+		@include checkerboard(15px, #58a, tan)*/
+		.checkerboard-svg{
+			background: #eee url('data:image/svg+xml,\
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25" >\
+            <rect x="50" width="50" height="50" />\
+            <rect y="50" width="50" height="50" />\
+            </svg>');
 			background-size: 30px 30px;
 		}
 	</style>
 </head>
 <body>
 	<div class="gridding"></div>
+	<div class="svg"></div>
+	<div class="polka"></div>
+	<div class="checkerboard"></div>
+	<div class="checkerboard-svg"></div>
 </body>
 </html>
