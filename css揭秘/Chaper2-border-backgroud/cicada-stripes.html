@@ -4,8 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>伪随机背景</title>
+	<style type="text/css">
+		/*使用质数伪随机*/
+		.cicada{
+			height: 200px;
+			background: hsl(20, 40%, 90%);
+			background-image: 
+				linear-gradient(90deg, #fb3 11px, transparent 0),
+				linear-gradient(90deg, #ab4 23px, transparent 0),
+				linear-gradient(90deg, #655 23px, transparent 0);
+			background-size: 83px 100%, 61px 100%, 41px 100%;
+		}
+	</style>
 </head>
 <body>
-	
+	<div class="cicada"></div>
 </body>
+
 </html>
