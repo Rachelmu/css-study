@@ -3,27 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>连续的图像边框</title>
+	<title>蚂蚁行军边框</title>
 	<style type="text/css">
 		/**
-		 * Continuous image borders
+		 * Marching ants border
 		 */
+		 
+		@keyframes ants { to { background-position: 100% 100% } }
 
 		div {
-			border: 1em solid transparent;
-			/*background: linear-gradient(white, white),
-			            url(http://csssecrets.io/images/stone-art.jpg);
-			background-size: cover;
-			background-clip: padding-box, border-box;
-			background-origin: border-box;*/
-			background: linear-gradient(white, white) padding-box,
-			            url(http://csssecrets.io/images/stone-art.jpg) border-box  0 / cover;
-			
-			/* Styling & enable resize */
-			width: 21em;
 			padding: 1em;
-			overflow: hidden;
-			resize: both;  /*resize CSS 属性允许你控制一个元素的可调整大小性。*/
+			border: 1px solid transparent;
+			background: linear-gradient(white, white) padding-box,
+			            repeating-linear-gradient(-45deg, black 0, black 25%, transparent 0, transparent 50%) 0 / .6em .6em;
+			animation: ants 12s linear infinite;
+			
+			max-width: 20em;
 			font: 100%/1.6 Baskerville, Palatino, serif;
 		}
 	</style>
