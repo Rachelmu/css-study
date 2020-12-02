@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>鼠标提示禁用状态</title>
+	<style type="text/css">
+		/**
+		 * Indicating disabled state
+		 */
+
+		:disabled, [disabled], [aria-disabled="true"] {
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<button>Button</button>
+	<button disabled>Disabled button</button>
+</body>
+</html>
