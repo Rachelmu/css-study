@@ -11,6 +11,8 @@
 		 
 		main {
 			min-height: calc(100vh - 5em - 7em);
+			/*避免内边距或边框搞乱高度的计算*/
+			box-sizing: border-box;
 		}
 
 		/* Toggle checkbox to alternate between short/long content */
