@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>flex</title>
+    <style type="text/css">
+        body{
+            min-width: 550px;
+        }
+        /* flex属性是flex-grow，flex-shrink和flex-basis这3个CSS属性的缩写，
+            flex-basis默认值是auto，flex-grow默认值是0，flex-shrink默认值是1。
+            flex:1等同于flex:1 1 0%，flex:1 2等同于flex:1 2 0%，即flex-basis使用的不是默认值auto，而是使用的0%；
+            flex:100px等同于flex:1 1 100px，即flex-grow使用的不是默认值0，而是使用的1；
+        */
+        .container {
+            display: flex;
+            border: 2px dashed crimson;
+        }
+        .container item {
+            border: 2px solid deepskyblue;
+        }
+        .container {
+            display: flex;
+        }
+        /* flex:0等同于设置flex: 0 1 0%，flex:none等同于设置flex: 0 0 auto。 */
+        .flex-0 item {
+            flex: 0;
+        }
+        .flex-none item {
+            flex: none;
+        }
+
+        /* flex:1等同于设置flex: 1 1 0%，flex:auto等同于设置flex: 1 1 auto。
+            结合flex属性值的描述，我们可以得出flex:1和flex:auto的行为表现：
+            元素尺寸可以弹性增大，也可以弹性变小，具有十足的弹性，但是flex:1在尺寸不足时会优先最小化内容尺寸，flex:auto在尺寸不足时会优先最大化内容尺寸。
+         */
+
+        .flex-1 item {
+            flex: 1;
+        }
+        .flex-auto item {
+            flex: auto;
+        }
+        /* flex:initial表示默认的flex状态，无需专门设置，适合小控件元素的分布布局，或者某一项内容动态变化的布局；
+        flex:0适用场景较少，适合设置在替换元素的父元素上；
+        flex:none适用于不换行的内容固定或者较少的小控件元素上，如按钮。
+        flex:1适合等分布局；
+        flex:auto适合基于内容动态适配的布局； */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <item>木张</item>
+        <item>木鑫</item>
+        <item>木旭</item>
+        <item>木帅</item>
+        <item>木哥</item>
+    </div>
+    <h4>flex:0</h4>
+    <div class="container flex-0">
+        <item>木张木张木张</item>
+        <item>木鑫木鑫木鑫</item>
+        <item>木旭木旭木旭</item>
+        <item>木帅木帅木帅</item>
+        <item>木哥木哥木哥</item>
+    </div>
+    <h4>flex:none</h4>
+    <div class="container flex-none">
+        <item>木张木张木张</item>
+        <item>木鑫木鑫木鑫</item>
+        <item>木旭木旭木旭</item>
+        <item>木帅木帅木帅</item>
+        <item>木哥木哥木哥</item>
+    </div>
+    <h4>flex:1</h4>
+    <div class="container flex-1">
+        <item>范张范张范张范张范张范张范张范张范张</item>
+        <item>范鑫</item>
+        <item>范旭</item>
+        <item>范帅</item>
+        <item>范哥</item>
+    </div>
+    <h4>flex:auto</h4>
+    <div class="container flex-auto">
+        <item>范张范张范张范张范张范张范张范张范张</item>
+        <item>范鑫</item>
+        <item>范旭</item>
+        <item>范帅</item>
+        <item>范哥</item>
+    </div>
+</body>
+</html>

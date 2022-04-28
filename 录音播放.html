@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <style>
+        .button-box{
+            width: 187px;
+            height: 44px;
+            background: #feeee8;
+            border-radius: 22px;
+        }
+        .time-box{
+            width: 147px;
+            height: 28px;
+            margin: 0 auto;
+            padding-top: 8px;
+        }
+        .play-btn{
+            border: 16px solid #f85415; 
+            color: #f85415; 
+            height: 0; width:0; 
+            -webkit-border-radius: 100%; 
+            -moz-border-radius: 100%; 
+            -o-border-radius: 100%; 
+            border-radius: 100%; 
+            margin: 0 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        .play-btn span{
+            position: absolute; top: -8px; left: -3px;
+            border-color: transparent transparent transparent #fff; 
+            border-width: 8px 0 8px 12px;  
+            width: 0; 
+            height: 0; 
+            border-style: solid; text-indent: -9999px;
+        }
+        .time-box .start-taste-line hr {
+            background-color: red; 
+            width: 3px;
+            height: 8px;
+            margin: 0 0.03rem;
+            display: inline-block;
+            border: none;
+          }
+          hr {
+            animation: note 0.2s ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+          }
+
+          .hr1 {
+            animation-delay: -1s;
+          }
+
+          .hr2 {
+            animation-delay: -0.9s;
+          }
+
+          .hr3 {
+            animation-delay: -0.8s;
+          }
+
+          .hr4 {
+            animation-delay: -0.7s;
+          }
+
+          .hr5 {
+            animation-delay: -0.6s;
+          }
+
+          .hr6 {
+            animation-delay: -0.5s;
+          }
+
+          .hr7 {
+            animation-delay: -0.4s;
+          }
+
+          .hr8 {
+            animation-delay: -0.3s;
+          }
+
+          .hr9 {
+            animation-delay: -0.2s;
+          }
+
+          .hr10 {
+            animation-delay: -0.1s;
+          }
+
+          .hr11 {
+            animation-delay: -1s;
+          }
+
+          .hr12 {
+            animation-delay: -0.9s;
+          }
+
+          .hr13 {
+            animation-delay: -0.8s;
+          }
+
+          .hr14 {
+            animation-delay: -0.7s;
+          }
+
+          .hr15 {
+            animation-delay: -0.6s;
+          }
+
+          .hr16 {
+            animation-delay: -0.5s;
+          }
+          @keyframes note {
+            from {
+              transform: scaleY(1);
+            }
+            to {
+              transform: scaleY(4);
+            }
+          }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="button-box">
+            <div class="play-btn">
+                <span></span>
+            </div>
+            <div class="time-box">
+                <span class="start-taste-line">
+                  <hr class="hr1" />
+                  <hr class="hr2" />
+                  <hr class="hr3" />
+                  <hr class="hr4" />
+                  <hr class="hr5" />
+                  <hr class="hr6" />
+                  <hr class="hr7" />
+                  <hr class="hr8" />
+                  <hr class="hr9" />
+                  <hr class="hr10" />
+                  <hr class="hr11" />
+                  <hr class="hr12" />
+                  <hr class="hr13" />
+                  <hr class="hr14" />
+                  <hr class="hr15" />
+                  <hr class="hr16" />
+                </span>
+             </div>
+        </div>
+    </body>
+</html>

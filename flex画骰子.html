@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>flex画骰子</title>
+    <style type="text/css">
+        /* flex 画三个点的色子 */
+        .box{
+           display: flex;  /* flex 布局 */
+           justify-content: space-between;/* 两端对齐 */
+        }
+        .item{
+            /* 背景色、大小、边框等 */
+        }
+        .item:nth-child(2){
+            align-self: center; 
+            /* 第二项居中对齐 */
+        }
+        .item:nth-child(3){
+            align-self: flex-end;
+            /* 第三项尾对齐 */
+        }
+        
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .item{
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+</body>
+</html>
